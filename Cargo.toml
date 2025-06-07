@@ -1,0 +1,19 @@
+[package]
+name = "pack-clr"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cryptify = "3.1.1"
+rust-crypto = "0.2.36"
+rustclr = "0.2.0"
+
+
+[build-dependencies]
+rust-crypto = "0.2.36"
+rand = "0.9.1"
+
+[profile.release]
+strip = true
+opt-level = "z"
+lto = true

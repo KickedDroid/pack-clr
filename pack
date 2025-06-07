@@ -1,0 +1,27 @@
+#!/bin/bash
+
+usage() {
+    echo "Usage: $0 <current_file_path>"
+    echo "  <current_file_path> : The full or relative path to the file to be packed."
+    exit 1
+}
+
+if [ "$#" -ne 1 ]; then
+    echo "Error: Incorrect number of arguments."
+    usage
+fi
+
+current_file_path="$1"
+
+# Check if the current file exists
+if [ ! -f "$current_file_path" ]; then
+    echo "Error: File not found at '$current_file_path'"
+    exit 1
+fi
+
+
+cp "$current_file_path" src/unencrypted;
+cargo build --release --target x86_64-pc-windows-gnu;
+cp target/x86_64-pc-windows-gnu/release/pack-clr.exe packed.exe;
+rm src/unencrypted;
+rm src/encr;
