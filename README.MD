@@ -40,6 +40,7 @@ On the target machine, use the same args you would with the dotnet app.
 
 
 ### Recommended Binaries
+This list of dotnet bins have been tested and work great.
 https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/tree/master/dotnet%20v4.8.1%20compiled%20binaries
 
 ---
