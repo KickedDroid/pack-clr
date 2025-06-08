@@ -1,4 +1,9 @@
 A simple tool to pack dotnet apps into a rust clr host using `rustclr`. 
+---
+Preq
+```
+rustup target add x86_64-pc-windows-gnu
+```
 
 ## Usage 
 
