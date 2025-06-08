@@ -3,7 +3,8 @@ use rustclr::{RuntimeVersion, RustClr};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Collect Arguments
-    let _args: Vec<String> = std::env::args().collect();
+    let mut _args: Vec<String> = std::env::args().collect();
+    _args.drain(0..1);
     let args = _args.iter().map(AsRef::as_ref).collect();
 
     cryptify::flow_stmt!();
