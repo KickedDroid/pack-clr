@@ -1,5 +1,6 @@
 use crypto::symmetriccipher::SynchronousStreamCipher;
 use rustclr::{RuntimeVersion, RustClr};
+use zeroize::Zeroize;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Collect Arguments
@@ -13,6 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut cipher = crypto::rc4::Rc4::new(include_bytes!("../keyfile"));
     let mut o = buffer.clone();
     cipher.process(&buffer[..], &mut o);
+    buffer.zeroize();
 
     cryptify::flow_stmt!();
     // Run the dotnet exe
@@ -22,6 +24,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_args(args)
         .run()?;
     println!("{}", output);
+    o.zeroize();
 
     Ok(())
 }
