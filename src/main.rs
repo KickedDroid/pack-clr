@@ -14,6 +14,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut cipher = crypto::rc4::Rc4::new(include_bytes!("../keyfile"));
     let mut o = buffer.clone();
     cipher.process(&buffer[..], &mut o);
+    // Zero Buffer
     buffer.zeroize();
 
     cryptify::flow_stmt!();
@@ -24,6 +25,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .with_args(args)
         .run()?;
     println!("{}", output);
+    // Zero Buffer
     o.zeroize();
 
     Ok(())
