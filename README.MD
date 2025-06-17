@@ -4,7 +4,7 @@ TODO:
 - remove rc4 encryption
 - Add obfuscation on build
 
---
+---
 Preq
 ```
 rustup target add x86_64-pc-windows-gnu
