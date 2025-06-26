@@ -1,5 +1,6 @@
+# Pack-CLR
 A tool to pack dotnet apps into a rust clr host using `clroxide`. Utilizing hardware breakpoints for patchless amsi bypass.
----
+
 TODO: 
 - remove rc4 encryption
 - Add obfuscation on build
@@ -64,13 +65,14 @@ build.rs
     cipher.process(&file[..], &mut o);
     let _ = fs::write("src/encr", o);
 ```
+---
 
-main.rs
-```rust
-// Include the encrypted dotnet binary
-let buffer = include_bytes!("encr");
-```
+### AMSI Bypass
 
+Utilizing the repo https://github.com/imunproductive/hwbp for hardware breakpoints. Learn 
+more about this technique here https://cymulate.com/blog/blindside-a-new-technique-for-edr-evasion-with-hardware-breakpoints/
+
+---
 
 ### Recommended Binaries
 This list of dotnet bins have been tested and work great.
