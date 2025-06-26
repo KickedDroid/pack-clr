@@ -1,4 +1,4 @@
-A simple tool to pack dotnet apps into a rust clr host using `rustclr`. 
+A tool to pack dotnet apps into a rust clr host using `clroxide`. Utilizing hardware breakpoints for patchless amsi bypass.
 ---
 Preq
 ```
@@ -42,9 +42,9 @@ On the target machine, use the same args you would with the dotnet app.
 
 ---
 
-### How it works
+### Build Encryption
 
-Very simple build script to encrypt the dot binary.
+Very simple build script to encrypt the dotnet binary.
 
 build.rs
 ```rust
@@ -74,9 +74,9 @@ https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/tree/master/dotnet%2
 ---
 
 
-### References 
-
+### References
+Thanks given to
+https://github.com/yamakadi/clroxide
 https://github.com/joaoviictorti/rustclr
-
 https://github.com/trickster0/OffensiveRust
 
