@@ -1,5 +1,10 @@
 A tool to pack dotnet apps into a rust clr host using `clroxide`. Utilizing hardware breakpoints for patchless amsi bypass.
 ---
+TODO: 
+- remove rc4 encryption
+- Add obfuscation on build
+
+---
 Preq
 ```
 rustup target add x86_64-pc-windows-gnu
