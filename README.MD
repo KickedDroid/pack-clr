@@ -83,7 +83,7 @@ https://github.com/r3motecontrol/Ghostpack-CompiledBinaries/tree/master/dotnet%2
 
 ### References
 Thanks given to
-https://github.com/yamakadi/clroxide
-https://github.com/joaoviictorti/rustclr
-https://github.com/trickster0/OffensiveRust
+- https://github.com/yamakadi/clroxide
+- https://github.com/joaoviictorti/rustclr
+- https://github.com/trickster0/OffensiveRust
 
